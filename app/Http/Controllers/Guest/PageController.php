@@ -9,7 +9,7 @@ use App\Models\Train;
 class PageController extends Controller
 {
     public function index(){
-        $trains = Train::all();
+        $trains = Train::limit(21)->get();
         return view('home', [ 'trains' => $trains]);
     }
 }

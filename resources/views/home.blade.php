@@ -18,7 +18,7 @@
 <body>
 
     <h1 class="m-4">
-        Treni in partenza:
+        Treni extra-galattici in partenza:
     </h1>
     
     <div class="container">
@@ -35,7 +35,13 @@
                     Azienda: {{ $train->azienda }}
                 </p>
                 <p>
+                    Data di arrivo: @if($train->data_di_partenza>$train->data_di_arrivo) {{$train->data_di_arrivo}} @else {{$train->data_di_partenza}} @endif
+                </p>
+                <p>
                     Orario di partenza: {{ $train->orario_di_partenza }}
+                </p>
+                <p>
+                    Data di arrivo: @if($train->data_di_partenza<$train->data_di_arrivo) {{$train->data_di_arrivo}} @else {{$train->data_di_partenza}} @endif
                 </p>
                 <p>
                     Orario di arrivo previsto: {{ $train->orario_di_arrivo }}
